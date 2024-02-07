@@ -1,0 +1,38 @@
+.overallHeader {
+    display: flex;
+    justify-content: space-between; 
+    background-color: #0C1747; 
+    overflow: hidden; 
+    width: 100%;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    font-family: 'DM Sans', sans-serif;
+    max-height: 98px;
+  }
+
+  
+.overallHeader div a {
+    display: block;
+    color: white; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 30px;
+}
+.personLogo {
+    max-width: 54.95px;
+    height: auto;
+    padding-top: 22px;
+    padding-right: 10px;
+}
+
+.fintechLogo{
+    max-width: 146px;
+    height: auto;
+    padding-left: 20px;
+}
+
+
+  
+  
