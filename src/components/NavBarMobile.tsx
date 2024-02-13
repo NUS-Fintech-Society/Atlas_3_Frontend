@@ -9,7 +9,7 @@ function Navbar(): JSX.Element {
   const [showSideBar, setShowSideBar] = useState(false);
 
   const toggleSideBar = () => {
-    setShowSideBar(!showSideBar);
+    setShowSideBar(true);
   };
 
   const closeSideBar = () => {

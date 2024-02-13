@@ -21,6 +21,10 @@
     padding: 30px;
     font-weight: 400;
 }
+.overallHeader div a:hover {
+    color:#F9A72B;
+}
+
 .personLogo {
     max-width: 54.95px;
     height: auto;
@@ -30,7 +34,6 @@
 .fintechLogo{
     max-width: 146px;
     height: auto;
-    padding-left: 20px;
 }
 .profileOptions {
     position: fixed; 

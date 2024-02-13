@@ -1,8 +1,8 @@
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     header {
       display: none;
     }
-  }
+  } */
 
 .overallHeader {
     display: flex;
@@ -26,6 +26,8 @@
     font-size: 20px;
     padding: 30px;
 }
+
+
 .personLogo {
     max-width: 54.95px;
     height: auto;
@@ -65,6 +67,11 @@
     padding-left: 44px;
     font-weight: 500;
 }
+
+.sidebar .Link:hover {
+    color: #F9A72B;
+  }
+  
 
   
   

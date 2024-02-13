@@ -4,7 +4,7 @@ import NavbarMobile from "./NavBarMobile.tsx";
 const Home: React.FC = () => {
   return (
     <div>
-      <NavbarMobile />
+      <Navbar />
       <h1>Home</h1>
     </div>
   );
