@@ -2,7 +2,6 @@
     height: 240px;
     width: 220px;
     padding: 0;
-    border: 1px solid black;
 
     display: flex;
     flex-direction: column;
