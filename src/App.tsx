@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import {useQuery} from "@tanstack/react-query";
 import resolveURL from "./api/fetch.ts";
 import './assets/css/App.css'
+import LoginFormComponent from './components/LoginFormComponent.tsx';
+import LoginImage from './components/LoginImage.tsx';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +37,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <LoginFormComponent />
+      <LoginImage />
     </>
   )
 }
