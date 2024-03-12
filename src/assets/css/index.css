@@ -1,12 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+ --font-dm-sans: "DM Sans";
 
+ /* font sizes */
+ --font-size-6xl: 1.563rem;
+ --font-size-xl: 1.25rem;
+ --font-size-15xl: 2.125rem;
+ --font-size-8xl: 1.688rem;
+
+ /* Colors */
+ --color-white: #fff;
+ --brand-blue: #0c1747;
+ --color-black: #000;
+ --color-gainsboro: #d9d9d9;
+ --brand-cream: #fbf6ef;
+ --brand-dark-grey: #5a5a5a;
+ --brand-black: #151515;
+ --brand-yellow: #f9a72b;
+
+ /* Gaps */
+ --gap-0: 0rem;
+ --gap-xl: 1.25rem;
+
+ /* Paddings */
+ --padding-xl: 1.25rem;
+ --padding-8xs: 0.313rem;
+ --padding-3xl: 1.375rem;
+ --padding-mid: 1.063rem;
+ --padding-9xs: 0.25rem;
+ --padding-8xl: 1.688rem;
+ --padding-2xl: 1.313rem;
+ --padding-base: 1rem;
+
+ /* Border radiuses */
+ --br-3xs: 10px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,9 +55,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  line-height: normal;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
@@ -65,4 +95,25 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--lightestgrey); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
