@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import './assets/css/index.css'
+//import './assets/css/index.css'
+import EventTag from './components/events/EventTag.tsx';
 
 const queryClient = new QueryClient()
 
@@ -21,7 +22,13 @@ enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <EventTag name={'Event Test 1 - Software Development'} datetime={new Date()} backgroundColor={'#528EE8'} />
+        <EventTag name={'Event Test 2 - Machine Learning'} datetime={new Date()} backgroundColor={'#8BCA80'} />
+        <EventTag name={'Event Test 3 - Blockchain'} datetime={new Date()} backgroundColor={'#EA5959'} />
+        <EventTag name={'Event Test 4 - Quant'} datetime={new Date()} backgroundColor={'#C179B9'} />
+        <EventTag name={'Event Test 5 - Internal Affairs'} datetime={new Date()} backgroundColor={'#7DCACF'} />
+        <EventTag name={'Event Test 6 - External Relations'} datetime={new Date()} backgroundColor={'#FDCE55'} />
+        <EventTag name={'Event Test 7 - Presidential Cell'} datetime={new Date()} backgroundColor={'#0C1747'} />
         <ReactQueryDevtools/>
       </QueryClientProvider>
     </React.StrictMode>,

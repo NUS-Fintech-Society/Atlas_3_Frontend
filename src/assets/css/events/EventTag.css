@@ -1,0 +1,30 @@
+.event-tag-container {
+display: flex;
+width: fit-content;
+margin: 5px;
+padding: 5px;
+flex-shrink: 0;
+border-radius: 10px;
+}
+
+.event-tag-container:hover {
+  cursor: pointer;
+}
+
+.event-tag-font-black {
+  color: #151515;
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.event-tag-font-white {
+  color: #ffffff;
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
