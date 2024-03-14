@@ -1,10 +1,8 @@
 .event-tag-container {
-display: flex;
-
-margin: 5px;
-padding: 5px;
-flex-shrink: 0;
-border-radius: 10px;
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .event-tag-container:hover {
