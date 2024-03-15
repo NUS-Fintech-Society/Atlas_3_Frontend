@@ -1,42 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/img/react.svg'
-import viteLogo from '/vite.svg'
-import {useQuery} from "@tanstack/react-query";
-import resolveURL from "./api/fetch.ts";
-import './assets/css/App.css'
+import { useState } from "react";
+import "./assets/css/App.css";
+import Toast, { ToastProps, ToastType } from "./components/toast/Toast";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [toasts, setToasts] = useState<ToastProps[]>([]);
 
-  const { isPending, data } = useQuery({
-    queryKey: ['resourceData'],
-    queryFn: () => fetch(resolveURL('/resource')).then((res) => res.json())
-  })
+  const showToast = (heading: string, message: string, type: ToastType) => {
+    const key = Date.now();
+    const toast = {
+      key,
+      heading,
+      message,
+      type,
+      onClose: () => removeToast(key),
+    };
+
+    setToasts([toast]);
+
+    setTimeout(() => {
+      removeToast(toast.key);
+    }, 5000);
+  };
+
+  const removeToast = (key: number) => {
+    setToasts((prevToasts) => prevToasts.filter((toast) => toast.key !== key));
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>{isPending ? "Loading..." : data.result}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <h1>Hello World!</h1>
+      <div className="app-row app-row--group">
+        {/* TOAST DEMO */}
+        <button
+          onClick={() => {
+            showToast("Success Heading", "This is a success text!", "success");
+          }}
+        >
+          Show Success Toast
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <button
+          onClick={() =>
+            showToast("Error Heading", "This is a failure text!", "error")
+          }
+        >
+          Show Info Toast
+        </button>
+        <button
+          onClick={() =>
+            showToast("Information Heading", "This is an info text!", "info")
+          }
+        >
+          Show Warning Toast
+        </button>
+        <button
+          onClick={() =>
+            showToast("Warning Heading", "This is a warning text!", "warning")
+          }
+        >
+          Show Warning Toast
+        </button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {/* END TOAST DEMO */}
+
+      {/* TOASTS */}
+      {toasts.map((x) => (
+        <Toast {...x} key={x.key} />
+      ))}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
