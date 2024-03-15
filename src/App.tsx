@@ -43,14 +43,14 @@ function App() {
             showToast("Error Heading", "This is a failure text!", "error")
           }
         >
-          Show Info Toast
+          Show Error Toast
         </button>
         <button
           onClick={() =>
             showToast("Information Heading", "This is an info text!", "info")
           }
         >
-          Show Warning Toast
+          Show Info Toast
         </button>
         <button
           onClick={() =>
