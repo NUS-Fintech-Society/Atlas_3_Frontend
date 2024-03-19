@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 //import './assets/css/index.css'
 import EventTag from './components/events/EventTag.tsx';
+import { RouterProvider } from "react-router-dom";
+
+import router from "routes/router.tsx";
+import 'css/reset.css'
 
 const queryClient = new QueryClient()
 
@@ -15,7 +18,7 @@ async function enableMocking() {
 
   const { worker } = await import('./mocks/worker')
 
-  return worker.start()
+  return worker.start({ onUnhandledRequest: "bypass" })
 }
 
 enableMocking().then(() => {
@@ -29,6 +32,7 @@ enableMocking().then(() => {
         <EventTag name={'Event Test 5 - Internal Affairs'} datetime={new Date()} backgroundColor={'#7DCACF'} />
         <EventTag name={'Event Test 6 - External Relations'} datetime={new Date()} backgroundColor={'#FDCE55'} />
         <EventTag name={'Event Test 7 - Presidential Cell'} datetime={new Date()} backgroundColor={'#0C1747'} />
+        <RouterProvider router={router}/>
         <ReactQueryDevtools/>
       </QueryClientProvider>
     </React.StrictMode>,
