@@ -1,4 +1,4 @@
-//src/mocks/browser.js
+//src/mocks/handlers.ts
 
 import { HttpResponseResolver, delay, http, HttpResponse } from "msw";
 import resolveURL from "../api/fetch.ts";
