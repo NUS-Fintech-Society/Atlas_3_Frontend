@@ -1,5 +1,8 @@
-import { FunctionComponent, useCallback } from "react";
-import { useQuery } from "@tanstack/react-query";
+import { FunctionComponent } from "react";
+import { useQuery, useMutation } from "@tanstack/react-query";
+import { useForm } from "@tanstack/react-form";
+import { zodValidator } from "@tanstack/zod-form-adapter";
+import { z } from "zod";
 import resolveURL from "../api/fetch";
 import styles from "../assets/css/ProfilePage.module.css";
 
@@ -11,31 +14,64 @@ type ProfilePageProps = {
 const ProfilePage: FunctionComponent<ProfilePageProps> = ({
   id,
 }: ProfilePageProps) => {
-  const { isPending, error, data } = useQuery({
+  const profileQuery = useQuery({
     queryKey: ["profile", id],
     queryFn: () =>
       fetch(resolveURL(`/profile/${id}`)).then((res) => res.json()),
   });
 
-  const onBackButtonClick = useCallback(() => {
-    // Please sync "All Department members (ADMIN PAGE)" to the project
-  }, []);
+  const data = profileQuery.data;
 
-  if (error) {
-    return <div>Error: {error.message}</div>; // TODO: Add a global error component
+  const profileMutation = useMutation({
+    mutationFn: (data: object) => {
+      return fetch(resolveURL(`/profile/${id}`), {
+        method: "PATCH",
+        body: JSON.stringify(data),
+      });
+    },
+  });
+
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      department: "",
+      role: "",
+      email: "",
+      telegram: "",
+    },
+    validatorAdapter: zodValidator,
+    onSubmit: async ({ value }) => {
+      profileMutation.mutate(value);
+      // TODO: Add a global success toast component, render it here
+    },
+  });
+
+  // id,
+  // name: "Rick Astley",
+  // department: "Software",
+  // role: "Singer",
+  // email: "nevergonnagiveyouup@gmail.com",
+  // telegram: "@rickroll",
+
+  const onBackButtonClick = () => {};
+
+  if (profileQuery.error) {
+    return <div>Error: {profileQuery.error.message}</div>; // TODO: Add a global error component
+  }
+  if (profileMutation.isError) {
+    return <div>Error: {profileMutation.error.message}</div>;
   }
 
-  if (isPending) {
+  if (profileQuery.isPending) {
     return <div>Loading...</div>; // TODO: Add a global spinner component
   }
+
+  if (profileMutation.isPending) {
+    return <div>Saving...</div>;
+  }
+
   return (
     <div className={styles.profilePage}>
-      <img
-        className={styles.editProfilePic}
-        loading="lazy"
-        alt=""
-        src="/edit-profile-pic.svg"
-      />
       <section className={styles.headerFrame}>
         <div className={styles.profileDetailsFrame}>
           <div className={styles.adminText}>
@@ -58,9 +94,23 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({
                   src="/profile-button@2x.png"
                 />
               </div>
+              <img
+                className={styles.editProfilePic}
+                loading="lazy"
+                alt=""
+                src="/edit-profile-pic.svg"
+              />
+
               <h1 className={styles.name}>{data.name}</h1>
             </div>
-            <form className={styles.departmentIconFrame}>
+            <form
+              className={styles.departmentIconFrame}
+              onSubmit={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                void form.handleSubmit();
+              }}
+            >
               <div className={styles.membersEventsTasksFrame}>
                 <div className={styles.department}>
                   <div className={styles.departmentChild} />
@@ -70,7 +120,29 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({
                       alt=""
                       src="/-icon-home.svg"
                     />
-                    <div className={styles.department1}>{data.department}</div>
+                    <div className={styles.department1}>
+                      <form.Field
+                        name="department"
+                        validatorAdapter={zodValidator}
+                        validators={{
+                          onChange: z.string(),
+                        }}
+                        children={(field) => {
+                          console.log(field);
+                          return (
+                            <input
+                              id={field.name}
+                              name={field.name}
+                              value={field.state.value}
+                              onBlur={field.handleBlur}
+                              onChange={(e) =>
+                                field.handleChange(e.target.value)
+                              }
+                            />
+                          );
+                        }}
+                      />
+                    </div>
                   </div>
                   <div className={styles.recruitmentFrame}>
                     <img
@@ -81,6 +153,7 @@ const ProfilePage: FunctionComponent<ProfilePageProps> = ({
                   </div>
                 </div>
               </div>
+
               <div className={styles.role}>
                 <div className={styles.roleChild} />
                 <div className={styles.departmentLabel}>
