@@ -5,6 +5,9 @@ import viteLogo from "/vite.svg";
 import reactLogo from "/react.svg";
 import resolveURL from "@/api/fetch.ts";
 
+import LoginFormComponent from "@/components/authentication/LoginFormComponent";
+import LoginImage from "@/components/authentication/LoginImage";
+
 
 const getResourceOptions = {
   queryKey: ['resourceData'],
@@ -36,6 +39,9 @@ function TestPage() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <LoginFormComponent></LoginFormComponent>
+      <LoginImage></LoginImage>
     </>
   )
 }
