@@ -1,6 +1,5 @@
 import styles from '../assets/css/LoginImage.module.css';
-import loginImage from '../assets/img/login-image.png';
-
+import loginImage from '/login-image.png'
 const LoginImage = () => {
 
     return (

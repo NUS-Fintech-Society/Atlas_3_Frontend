@@ -5,6 +5,7 @@
     height: 100%; 
     width: 100%;
     padding: 0;
+    border-radius: 7px;
 
     color: #FFF;
     background-color: #0C1747;
@@ -13,4 +14,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    text-align: center;
+    cursor: pointer;
 }
