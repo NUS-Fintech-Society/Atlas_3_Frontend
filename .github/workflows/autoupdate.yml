@@ -2,9 +2,9 @@ name: autoupdate
 on:
   # This will trigger on all pushes to all branches.
   push:
-  # Alternatively, you can only trigger if commits are pushed to certain branches, e.g.:
-   branches:
-     - main
+    # Alternatively, you can only trigger if commits are pushed to certain branches, e.g.:
+    branches:
+      - main
 
 jobs:
   autoupdate:
@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: docker://chinthakagodawita/autoupdate-action:v1
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           PR_FILTER: "labelled"
           PR_LABELS: "epic"
