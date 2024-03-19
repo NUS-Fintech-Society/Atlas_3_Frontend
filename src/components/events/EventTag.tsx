@@ -7,7 +7,7 @@ interface EventTagProps {
   backgroundColor: string;
 }
 
-const EventTag: React.FC<EventTagProps> = ({
+const EventTag = ({
   name,
   backgroundColor,
 }: EventTagProps) => {
