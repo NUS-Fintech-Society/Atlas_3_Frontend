@@ -5,8 +5,8 @@ import viteLogo from "/vite.svg";
 import reactLogo from "/react.svg";
 import resolveURL from "@/api/fetch.ts";
 
-import LoginFormComponent from "@/components/LoginFormComponent.tsx";
-import LoginImage from "@/components/LoginImage.tsx";
+import LoginFormComponent from "@/components/authentication/LoginFormComponent";
+import LoginImage from "@/components/authentication/LoginImage";
 
 
 const getResourceOptions = {
