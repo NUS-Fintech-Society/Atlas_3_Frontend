@@ -1,4 +1,4 @@
-import styles from '../assets/css/SignInButton.module.css';
+import styles from 'css/SignInButton.module.css';
 
 const SignInButton = () => {
 

@@ -1,5 +1,5 @@
-import styles from '../assets/css/LoginFormComponent.module.css';
-import SignInButton from './SignInButton';
+import styles from 'css/LoginFormComponent.module.css';
+import SignInButton from './SignInButton.tsx';
 
 const LoginFormComponent = () => {
 
