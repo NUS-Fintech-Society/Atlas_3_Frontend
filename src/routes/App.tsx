@@ -4,10 +4,13 @@ import MobileLoginContainer from "components/authentication/MobileLoginContainer
 import WebLoginContainer from "components/authentication/WebLoginContainer.tsx";
 import { BREAKPOINTS } from "components/constants.tsx";
 
-
 const App = () => {
-    const size = useWindowSize();
-    return size.width && size.width <= BREAKPOINTS.MD ? <MobileLoginContainer/> : <WebLoginContainer/>;
+  const size = useWindowSize();
+  return size.width && size.width <= BREAKPOINTS.MD ? (
+    <MobileLoginContainer />
+  ) : (
+    <WebLoginContainer />
+  );
 };
 
-export default App
+export default App;
