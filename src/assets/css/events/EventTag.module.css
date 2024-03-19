@@ -1,16 +1,15 @@
-.event-tag-container {
+.container {
   display: flex;
   margin: 5px;
   padding: 5px;
   border-radius: 10px;
 }
 
-.event-tag-container:hover {
+.container:hover {
   cursor: pointer;
 }
 
-.event-tag-font-black {
-  color: #151515;
+.font {
   font-family: "DM Sans";
   font-size: 10px;
   font-style: normal;
@@ -18,11 +17,11 @@
   line-height: normal;
 }
 
-.event-tag-font-white {
+.fontBlack {
+  color: #151515;
+  
+}
+
+.fontWhite {
   color: #ffffff;
-  font-family: "DM Sans";
-  font-size: 10px;
-  font-style: normal;
-  font-weight: bold;
-  line-height: normal;
 }

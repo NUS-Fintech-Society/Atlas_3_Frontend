@@ -1,4 +1,5 @@
-import styles from "../../assets/css/events/EventTag.module.css";
+import styles from "css/events/EventTag.module.css";
+import { EVENT_TAG_COLORS } from "../constants";
 
 interface EventTagProps {
   name: string;
@@ -11,12 +12,12 @@ const EventTag: React.FC<EventTagProps> = ({
   backgroundColor,
 }: EventTagProps) => {
   return (
-    <div className={styles["event-tag-container"]} style={{ backgroundColor }}>
+    <div className={`${styles.container} ${styles.font}`} style={{ backgroundColor }}>
       <span
         className={
-          backgroundColor == "#0C1747"
-            ? styles["event-tag-font-white"]
-            : styles["event-tag-font-black"]
+          backgroundColor == EVENT_TAG_COLORS.PC
+            ? styles.fontWhite
+            : styles.fontBlack
         }
       >
         {name}
