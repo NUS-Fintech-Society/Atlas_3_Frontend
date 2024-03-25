@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import styles from "../assets/css/NavBar.module.css";
+import styles from "css/shared/NavBar.module.css";
 import personLogo from "../assets/img/person_logo.png";
 import fintechLogo from "../assets/img/fintech_logo.png";
 import { useWindowSize } from "@uidotdev/usehooks";
@@ -29,7 +29,7 @@ function Navbar(): JSX.Element {
         <header>
           <div className={styles.overallHeader}>
             <div>
-              <a href="/">
+              <a href="/public">
                 <img
                   src={fintechLogo}
                   alt="fintech Logo"

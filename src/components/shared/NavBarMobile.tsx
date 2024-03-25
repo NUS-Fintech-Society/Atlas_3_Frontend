@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../assets/css/NavBarMobile.module.css"; // Import CSS module
+import styles from "css/shared/NavBarMobile.module.css"; // Import CSS module
 import personLogo from "../assets/img/person_logo.png";
 import fintechLogo from "../assets/img/fintech_logo.png";
 import closeSymbol from "../assets/img/material-symbols_close.png";
