@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/shared/NavBar.module.css";
 import personLogo from "../assets/img/person_logo.png";
@@ -7,7 +7,7 @@ import { useWindowSize } from "@uidotdev/usehooks";
 import { useClickAway } from "@uidotdev/usehooks";
 import NavBarMobile from "./NavBarMobile.tsx";
 
-function Navbar(): JSX.Element {
+function Navbar() {
   const [showProfileOptions, setShowProfileOptions] = useState(false);
   const size = useWindowSize(); // Get window size
 
@@ -16,14 +16,14 @@ function Navbar(): JSX.Element {
   });
 
   const handleProfile = () => {
-    if (showProfileOptions === false) {
+    if (!showProfileOptions) {
       setShowProfileOptions(true);
     }
   };
 
   return (
     <>
-      {size.width < 767 ? ( // Check window width
+      {size.width && size.width < 767 ? ( // Check window width
         <NavBarMobile />
       ) : (
         <header>
