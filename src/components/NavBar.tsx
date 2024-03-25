@@ -4,36 +4,22 @@ import styles from "../assets/css/NavBar.module.css";
 import personLogo from "../assets/img/person_logo.png";
 import fintechLogo from "../assets/img/fintech_logo.png";
 import { useWindowSize } from "@uidotdev/usehooks";
+import { useClickAway } from "@uidotdev/usehooks";
 import NavBarMobile from "./NavBarMobile.tsx";
 
 function Navbar(): JSX.Element {
   const [showProfileOptions, setShowProfileOptions] = useState(false);
-  const overallHeaderRef = useRef(null);
-  const profileOptionsRef = useRef(null);
   const size = useWindowSize(); // Get window size
 
-  const toggleProfileOptions = () => {
-    setShowProfileOptions(!showProfileOptions);
+  const profileOptionsRef = useClickAway(() => {
+    setShowProfileOptions(false);
+  });
+
+  const handleProfile = () => {
+    if (showProfileOptions === false) {
+      setShowProfileOptions(true);
+    }
   };
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        overallHeaderRef.current &&
-        !overallHeaderRef.current.contains(event.target) &&
-        profileOptionsRef.current &&
-        !profileOptionsRef.current.contains(event.target)
-      ) {
-        setShowProfileOptions(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
 
   return (
     <>
@@ -41,7 +27,7 @@ function Navbar(): JSX.Element {
         <NavBarMobile />
       ) : (
         <header>
-          <div className={styles.overallHeader} ref={overallHeaderRef}>
+          <div className={styles.overallHeader}>
             <div>
               <a href="/">
                 <img
@@ -86,10 +72,10 @@ function Navbar(): JSX.Element {
                 src={personLogo}
                 alt="Person Logo"
                 className={styles.personLogo}
-                onClick={toggleProfileOptions}
+                onClick={handleProfile}
               />
               {showProfileOptions && (
-                <div className={styles.profileOptions}>
+                <div ref={profileOptionsRef} className={styles.profileOptions}>
                   <div className={styles.profileOption}>
                     <p>Profile</p>
                   </div>
