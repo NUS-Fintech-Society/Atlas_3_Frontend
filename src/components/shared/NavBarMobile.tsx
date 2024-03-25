@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/shared/NavBarMobile.module.css"; // Import CSS module
-import personLogo from "../assets/img/person_logo.png";
-import fintechLogo from "../assets/img/fintech_logo.png";
-import closeSymbol from "../assets/img/material-symbols_close.png";
+import personLogo from "/person_logo.png";
+import fintechLogo from "/fintech_logo.png";
+import closeSymbol from "/material-symbols_close.png";
 
-function Navbar(): JSX.Element {
+function NavBarMobile() {
   const [showSideBar, setShowSideBar] = useState(false);
 
   const toggleSideBar = () => {
@@ -99,4 +99,4 @@ function Navbar(): JSX.Element {
   );
 }
 
-export default Navbar;
+export default NavBarMobile;

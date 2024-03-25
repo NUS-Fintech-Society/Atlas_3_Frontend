@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/shared/NavBar.module.css";
-import personLogo from "../assets/img/person_logo.png";
-import fintechLogo from "../assets/img/fintech_logo.png";
+import personLogo from "/person_logo.png";
+import fintechLogo from "/fintech_logo.png";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { useClickAway } from "@uidotdev/usehooks";
 import NavBarMobile from "./NavBarMobile.tsx";
