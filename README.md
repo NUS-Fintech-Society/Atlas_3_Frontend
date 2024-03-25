@@ -27,7 +27,9 @@ We shall be using these packages
 
 1. [React Query](https://query.gg/?s=tanstack) for data fetching.
 2. [Mock Service Worker](https://mswjs.io/) to isolate develop on the frontend. You don't have to worry about backend code.
-3. [date-fns](https://date-fns.org/) for any date related data processing.
+3. [React Router](https://reactrouter.com/en/main) for routing.
+4. [date-fns](https://date-fns.org/) for any date related data processing.
+5. [useHooks](https://usehooks.com/) for useful hooks so you never have to write custom hooks.
 
 Please look up the documentation on their websites for intended uses and best practices.
 
