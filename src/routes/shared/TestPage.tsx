@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./assets/css/App.css";
-import Toast, { ToastProps, ToastType } from "./components/toast/Toast";
+import Toast, { ToastProps, ToastType } from "../../components/toast/Toast";
 
-function App() {
+function TestPage() {
   const [toasts, setToasts] = useState<ToastProps[]>([]);
 
   const showToast = (heading: string, message: string, type: ToastType) => {
@@ -70,4 +70,4 @@ function App() {
   );
 }
 
-export default App;
+export default TestPage
