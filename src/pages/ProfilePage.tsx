@@ -1,19 +1,15 @@
-import { FunctionComponent } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
 import resolveURL from "../api/fetch";
-import styles from "../assets/css/ProfilePage.module.css";
-
-type ProfilePageProps = {
-  id: number;
-};
+import styles from "css/ProfilePage.module.css";
+import { useParams } from "react-router-dom";
 
 // TODO: Integrate with React Router
-const ProfilePage: FunctionComponent<ProfilePageProps> = ({
-  id,
-}: ProfilePageProps) => {
+const ProfilePage = () => {
+  const { id } = useParams();
+
   const profileQuery = useQuery({
     queryKey: ["profile", id],
     queryFn: () =>
