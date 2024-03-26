@@ -1,32 +1,30 @@
-import { useState } from "react";
+/* background-color: rgba(202, 202, 202, 0.2); */
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "css/shared/NavBar.module.css";
+import styles from "css/shared/NavBar.module.css"; // Assuming you have CSS modules set up
 import personLogo from "/person_logo.png";
 import fintechLogo from "/fintech_logo.png";
 import { useWindowSize } from "@uidotdev/usehooks";
-import { useClickAway } from "@uidotdev/usehooks";
 import NavBarMobile from "./NavBarMobile.tsx";
 
 function Navbar() {
   const [showProfileOptions, setShowProfileOptions] = useState(false);
   const size = useWindowSize(); // Get window size
 
-  const profileOptionsRef = useClickAway(() => {
-    setShowProfileOptions(false);
-  });
+  const handleProfileHover = () => {
+    setShowProfileOptions(true);
+  };
 
-  const handleProfile = () => {
-    if (!showProfileOptions) {
-      setShowProfileOptions(true);
-    }
+  const handleProfileLeave = () => {
+    setShowProfileOptions(false);
   };
 
   return (
     <>
-      {size.width && size.width < 767 ? ( // Check window width
+      {size.width && size.width < 767 ? (
         <NavBarMobile />
       ) : (
-        <header>
+        <div>
           <div className={styles.overallHeader}>
             <div>
               <a href="/public">
@@ -67,26 +65,29 @@ function Navbar() {
                 Recruitment
               </Link>
             </div>
-            <div ref={profileOptionsRef}>
+            <div
+              onMouseEnter={handleProfileHover}
+              onMouseLeave={handleProfileLeave}
+              className={styles.personIconContainer}
+            >
               <img
                 src={personLogo}
                 alt="Person Logo"
                 className={styles.personLogo}
-                onClick={handleProfile}
               />
               {showProfileOptions && (
-                <div ref={profileOptionsRef} className={styles.profileOptions}>
-                  <div className={styles.profileOption}>
-                    <p>Profile</p>
-                  </div>
-                  <div className={styles.signOutOption}>
-                    <p>Sign Out</p>
-                  </div>
+                <div className={styles.profileOptions}>
+                  <Link to="/profile" className={styles.profileOption}>
+                    Profile
+                  </Link>
+                  <Link to="/signout" className={styles.signOutOption}>
+                    Sign Out
+                  </Link>
                 </div>
               )}
             </div>
           </div>
-        </header>
+        </div>
       )}
     </>
   );

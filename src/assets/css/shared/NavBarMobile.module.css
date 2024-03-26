@@ -1,9 +1,3 @@
-/* @media (min-width: 768px) {
-    header {
-      display: none;
-    }
-  } */
-
 .overallHeader {
     display: flex;
     justify-content: space-between; 
@@ -29,7 +23,7 @@
 
 
 .personLogo {
-    max-width: 54.95px;
+    max-width: 100px;
     height: auto;
     padding-right: 44px;
 }
