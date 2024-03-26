@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.font {
+  font-family: "DM Sans";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.fontBlack {
+  color: #151515;
+  
+}
+
+.fontWhite {
+  color: #ffffff;
+}

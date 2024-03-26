@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import TestPage from "./shared/TestPage.tsx";
 import App from "./App.tsx";
 import ProfilePage from "@/pages/ProfilePage.tsx";
+import EventPage from "./events/EventPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,8 @@ const router = createBrowserRouter([
     Component: TestPage,
   },
   {
-    path: "profiles/:id",
-    Component: ProfilePage,
+    path: "/events",
+    Component: EventPage,
   },
 ]);
 
