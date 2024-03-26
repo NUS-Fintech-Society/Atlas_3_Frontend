@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router-dom";
 import Navbar from "components/Navbar.tsx";
 
 import router from "routes/router.tsx";
+import "css/index.css";
 import "css/reset.css";
 
 const queryClient = new QueryClient();

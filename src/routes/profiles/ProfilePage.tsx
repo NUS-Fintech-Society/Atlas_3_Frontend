@@ -2,12 +2,13 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { useForm } from "@tanstack/react-form";
 import { zodValidator } from "@tanstack/zod-form-adapter";
 import { z } from "zod";
-import resolveURL from "../api/fetch";
+import resolveURL from "../../api/fetch";
 import styles from "css/ProfilePage.module.css";
 import { useParams } from "react-router-dom";
 
 // TODO: Integrate with React Router
 const ProfilePage = () => {
+  console.log(styles);
   const { id } = useParams();
 
   const profileQuery = useQuery({
@@ -124,7 +125,6 @@ const ProfilePage = () => {
                           onChange: z.string(),
                         }}
                         children={(field) => {
-                          console.log(field);
                           return (
                             <input
                               id={field.name}
@@ -172,7 +172,26 @@ const ProfilePage = () => {
                       src="/-icon-mail.svg"
                     />
                   </div>
-                  <h2 className={styles.email1}>{data.email}</h2>
+                  <div className={styles.email1}>
+                    <form.Field
+                      name="email"
+                      validatorAdapter={zodValidator}
+                      validators={{
+                        onChange: z.string(),
+                      }}
+                      children={(field) => {
+                        return (
+                          <input
+                            id={field.name}
+                            name={field.name}
+                            value={field.state.value}
+                            onBlur={field.handleBlur}
+                            onChange={(e) => field.handleChange(e.target.value)}
+                          />
+                        );
+                      }}
+                    />
+                  </div>
                 </div>
                 <div className={styles.contactFrameContent}>
                   <div className={styles.telegramIconFrame}>
@@ -183,7 +202,28 @@ const ProfilePage = () => {
                         alt=""
                         src="/-icon-phone.svg"
                       />
-                      <div className={styles.telegram}>{data.telegram}</div>
+                      <div className={styles.telegram}>
+                        <form.Field
+                          name="telegram"
+                          validatorAdapter={zodValidator}
+                          validators={{
+                            onChange: z.string(),
+                          }}
+                          children={(field) => {
+                            return (
+                              <input
+                                id={field.name}
+                                name={field.name}
+                                value={field.state.value}
+                                onBlur={field.handleBlur}
+                                onChange={(e) =>
+                                  field.handleChange(e.target.value)
+                                }
+                              />
+                            );
+                          }}
+                        />
+                      </div>
                     </button>
                     <div className={styles.backButtonWrapper}>
                       <div
