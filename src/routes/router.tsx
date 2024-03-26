@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import TestPage from "./shared/TestPage.tsx";
-import App from "./App.tsx"
+import App from "./App.tsx";
+import ProfilePage from "./profiles/ProfilePage.tsx";
 import EventPage from "./events/EventPage.tsx";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: App
+    Component: App,
   },
   {
     path: "/test",
@@ -16,7 +16,11 @@ const router = createBrowserRouter([
   {
     path: "/events",
     Component: EventPage,
-  }
-])
+  },
+  {
+    path: "/profiles/:id",
+    Component: ProfilePage,
+  },
+]);
 
-export default router
+export default router;

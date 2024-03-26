@@ -1,0 +1,584 @@
+.editProfilePic {
+    width: 4.688rem;
+    height: 4.688rem;
+    position: absolute;
+    margin: 0 !important;
+    bottom: 20.813rem;
+    left: 17.25rem;
+    z-index: 1;
+  }
+  .profile {
+    margin: 0;
+    align-self: stretch;
+    height: 4.063rem;
+    position: relative;
+    font-size: inherit;
+    font-weight: 500;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+  }
+  .profileName {
+    width: 17.563rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 var(--padding-2xl);
+    box-sizing: border-box;
+  }
+  .admin {
+    margin: 0;
+    align-self: stretch;
+    height: 2.125rem;
+    position: relative;
+    font-size: inherit;
+    font-weight: 500;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .departmentText {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0.438rem 0 0;
+  }
+  .roleFrame {
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+    border-radius: 12.63px;
+    background-color: var(--color-gainsboro);
+  }
+  .adminText,
+  .homeIconFrame {
+    display: flex;
+    flex-direction: row;
+  }
+  .homeIconFrame {
+    width: 10.188rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: var(--font-size-15xl);
+    color: var(--color-black);
+  }
+  .adminText {
+    width: 67.5rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--gap-xl);
+    max-width: 100%;
+  }
+  .profileButton1 {
+    height: 15.625rem;
+    width: 15.625rem;
+    position: relative;
+    object-fit: cover;
+  }
+  .profileButton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 var(--padding-xl);
+  }
+  .name {
+    margin: 0;
+    align-self: stretch;
+    position: relative;
+    font-size: inherit;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .contactFrame {
+    width: 18.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.75rem 0;
+    min-width: 18.125rem;
+  }
+  .departmentChild {
+    height: 6.375rem;
+    width: 47.375rem;
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--brand-cream);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    display: none;
+    max-width: 100%;
+  }
+  .department1,
+  .iconHome {
+    position: relative;
+    z-index: 1;
+  }
+  .iconHome {
+    height: 2.775rem;
+    width: 3.125rem;
+  }
+  .department1 {
+    height: 3rem;
+    flex: 1;
+    font-size: var(--font-size-15xl);
+    font-weight: 500;
+    font-family: var(--font-dm-sans);
+    color: var(--brand-dark-grey);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-width: 9.625rem;
+    max-width: 100%;
+  }
+  .eventsFrame1 {
+    width: 30rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0 1.75rem;
+    max-width: 100%;
+  }
+  .dropdownFilterSelect {
+    align-self: stretch;
+    height: 1.181rem;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .recruitmentFrame {
+    width: 3.438rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0.906rem;
+    box-sizing: border-box;
+  }
+  .department,
+  .membersEventsTasksFrame {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .department {
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--brand-cream);
+    border: 1px solid var(--color-black);
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: var(--padding-8xl) 1.813rem 1.662rem var(--padding-8xl);
+    gap: var(--gap-xl);
+  }
+  .membersEventsTasksFrame {
+    align-self: stretch;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0 var(--padding-9xs);
+  }
+  .roleChild {
+    height: 5.5rem;
+    width: 47.375rem;
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    display: none;
+    max-width: 100%;
+  }
+  .iconUser {
+    width: 2.625rem;
+    height: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  .departmentLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0.188rem 0 0;
+  }
+  .role1 {
+    height: 3rem;
+    width: 10.75rem;
+    position: relative;
+    font-size: var(--font-size-15xl);
+    font-weight: 500;
+    font-family: var(--font-dm-sans);
+    color: var(--color-black);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .backButtonFrame,
+  .role {
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .role {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-xl) 2.25rem var(--padding-mid);
+    gap: 1.938rem;
+    max-width: 100%;
+  }
+  .backButtonFrame {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .iconMail {
+    width: 2.813rem;
+    height: 1.969rem;
+    position: relative;
+    z-index: 1;
+  }
+  .iconMailWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0 0.469rem;
+  }
+  .email,
+  .email1 {
+    display: flex;
+    position: relative;
+  }
+  .email1 {
+    margin: 0;
+    height: 3rem;
+    width: 80%;
+    font-size: var(--font-size-15xl);
+    font-weight: 500;
+    font-family: var(--font-dm-sans);
+    color: var(--color-black);
+    text-align: left;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .email {
+    flex: 0.8157;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: var(--padding-xl) 2.125rem;
+    box-sizing: border-box;
+    gap: 0 1.875rem;
+    min-width: 15rem;
+    max-width: 100%;
+  }
+  .componentInstance {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-gainsboro);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .iconPhone {
+    height: 2.481rem;
+    width: 2.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .contact,
+  .telegram {
+    display: flex;
+    position: relative;
+  }
+  .telegram {
+    height: 3rem;
+    flex: 1;
+    font-size: var(--font-size-15xl);
+    font-weight: 500;
+    font-family: var(--font-dm-sans);
+    color: var(--color-black);
+    text-align: left;
+    align-items: center;
+    min-width: 7.188rem;
+    z-index: 1;
+  }
+  .contact {
+    cursor: pointer;
+    border: 0;
+    padding: 1.125rem 3.25rem var(--padding-3xl) 1.875rem;
+    background-color: transparent;
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0 2.5rem;
+  }
+  .componentInstance1 {
+    height: 2.625rem;
+    flex: 1;
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--brand-blue);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
+  }
+  .button {
+    width: 4.188rem;
+    position: relative;
+    font-size: var(--font-size-6xl);
+    font-weight: 500;
+    font-family: var(--font-dm-sans);
+    color: var(--color-white);
+    text-align: center;
+    display: none;
+  }
+  .component3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: -0.07%;
+    bottom: 0;
+    left: 0.07%;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .backButton1 {
+    position: absolute;
+    height: 67.38%;
+    width: 23.39%;
+    top: 17.38%;
+    right: 35.55%;
+    bottom: 15.24%;
+    left: 41.06%;
+    max-width: 100%;
+    overflow: hidden;
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 1;
+  }
+  .backButton {
+    height: 2.625rem;
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+  }
+  .backButtonWrapper,
+  .telegramIconFrame {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .backButtonWrapper {
+    width: 9.231rem;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 var(--padding-8xs);
+    box-sizing: border-box;
+  }
+  .telegramIconFrame {
+    align-self: stretch;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2.625rem 0;
+  }
+  .contactFrameContent,
+  .emailInputFrame {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .contactFrameContent {
+    flex: 1;
+    flex-direction: column;
+    padding: 0.125rem 0 0;
+    box-sizing: border-box;
+    min-width: 15rem;
+  }
+  .emailInputFrame {
+    align-self: stretch;
+    flex-direction: row;
+    gap: 0 1.25rem;
+  }
+  .departmentIconFrame {
+    margin: 0;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.281rem 0;
+    min-width: 30.938rem;
+  }
+  .departmentIconFrame,
+  .emailInput,
+  .profileDetailsFrame {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+  .emailInput {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 3rem;
+    text-align: center;
+    font-size: 2.625rem;
+    color: var(--brand-black);
+  }
+  .profileDetailsFrame {
+    width: 68.75rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem 0;
+  }
+  .headerFrame,
+  .profilePage {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .headerFrame {
+    width: 78.875rem;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 var(--padding-xl);
+    max-width: 100%;
+    text-align: left;
+    font-size: 3.125rem;
+    color: var(--brand-blue);
+    font-family: var(--font-dm-sans);
+  }
+  .profilePage {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 0 11.875rem;
+    gap: 2.313rem 0;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1200px) {
+    .tasksFrame {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .profile {
+      font-size: 2.5rem;
+    }
+    .admin {
+      font-size: var(--font-size-8xl);
+    }
+    .name {
+      font-size: var(--font-size-15xl);
+    }
+    .contactFrame {
+      flex: 1;
+    }
+    .department1,
+    .email1,
+    .role1,
+    .telegram {
+      font-size: var(--font-size-8xl);
+    }
+    .emailInput {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 750px) {
+    .desktopNavBarUpdatedAtt {
+      padding-right: var(--padding-3xl);
+      box-sizing: border-box;
+    }
+    .adminText,
+    .department,
+    .emailInputFrame,
+    .eventsFrame1 {
+      flex-wrap: wrap;
+    }
+    .departmentIconFrame {
+      min-width: 100%;
+    }
+    .emailInput {
+      gap: 0 1.5rem;
+    }
+    .profilePage {
+      gap: 1.125rem 0;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .profile {
+      font-size: 1.875rem;
+    }
+    .admin {
+      font-size: var(--font-size-xl);
+    }
+    .name {
+      font-size: var(--font-size-6xl);
+    }
+    .department1,
+    .role1 {
+      font-size: var(--font-size-xl);
+    }
+    .role {
+      flex-wrap: wrap;
+      gap: 0.938rem;
+    }
+    .email1 {
+      font-size: var(--font-size-xl);
+    }
+    .email {
+      flex-wrap: wrap;
+      gap: 0 0.938rem;
+      flex: 1;
+    }
+    .telegram {
+      font-size: var(--font-size-xl);
+    }
+    .contact {
+      flex-wrap: wrap;
+      gap: 0 1.25rem;
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .button {
+      font-size: var(--font-size-xl);
+    }
+    .telegramIconFrame {
+      gap: 1.313rem 0;
+    }
+  }
+  

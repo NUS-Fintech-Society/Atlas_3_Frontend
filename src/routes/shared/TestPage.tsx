@@ -5,17 +5,15 @@ import viteLogo from "/vite.svg";
 import reactLogo from "/react.svg";
 import resolveURL from "@/api/fetch.ts";
 
-
 const getResourceOptions = {
-  queryKey: ['resourceData'],
-  queryFn: () => fetch(resolveURL('/resource')).then((res) => res.json())
-}
-
+  queryKey: ["resourceData"],
+  queryFn: () => fetch(resolveURL("/resource")).then((res) => res.json()),
+};
 
 function TestPage() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  const { isPending, data } = useQuery(getResourceOptions)
+  const { isPending, data } = useQuery(getResourceOptions);
 
   return (
     <>
@@ -37,7 +35,7 @@ function TestPage() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default TestPage
+export default TestPage;
