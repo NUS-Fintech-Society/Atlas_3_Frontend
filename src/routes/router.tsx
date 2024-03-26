@@ -17,6 +17,10 @@ const router = createBrowserRouter([
     path: "/events",
     Component: EventPage,
   },
+  {
+    path: "/profiles/:id",
+    Component: ProfilePage,
+  },
 ]);
 
 export default router;
