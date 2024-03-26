@@ -36,4 +36,23 @@ export const handlers = [
       });
     })
   ),
+
+  http.patch(
+    resolveURL("/profile/:id"),
+    withDelay(API_CALL_DELAY, ({ params }) => {
+      const { id } = params;
+      const { name, department, role, email, telegram } = params as Record<
+        string,
+        string
+      >;
+      return HttpResponse.json({
+        id,
+        name,
+        department,
+        role,
+        email,
+        telegram,
+      });
+    })
+  ),
 ];

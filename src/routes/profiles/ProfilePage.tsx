@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 // TODO: Integrate with React Router
 const ProfilePage = () => {
-  console.log(styles);
   const { id } = useParams();
 
   const profileQuery = useQuery({
@@ -30,11 +29,10 @@ const ProfilePage = () => {
 
   const form = useForm({
     defaultValues: {
-      name: "",
-      department: "",
-      role: "",
-      email: "",
-      telegram: "",
+      department: data?.department,
+      role: data?.role,
+      email: data?.email,
+      telegram: data?.telegram,
     },
     validatorAdapter: zodValidator,
     onSubmit: async ({ value }) => {
@@ -43,6 +41,11 @@ const ProfilePage = () => {
     },
   });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    void form.handleSubmit();
+  };
   // id,
   // name: "Rick Astley",
   // department: "Software",
@@ -130,7 +133,7 @@ const ProfilePage = () => {
                               id={field.name}
                               name={field.name}
                               value={field.state.value}
-                              onBlur={field.handleBlur}
+                              onBlur={handleSubmit}
                               onChange={(e) =>
                                 field.handleChange(e.target.value)
                               }
@@ -159,7 +162,26 @@ const ProfilePage = () => {
                     src="/-icon-user.svg"
                   />
                 </div>
-                <div className={styles.role1}>{data.role}</div>
+                <div className={styles.role1}>
+                  <form.Field
+                    name="role"
+                    validatorAdapter={zodValidator}
+                    validators={{
+                      onChange: z.string(),
+                    }}
+                    children={(field) => {
+                      return (
+                        <input
+                          id={field.name}
+                          name={field.name}
+                          value={field.state.value}
+                          onBlur={handleSubmit}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                        />
+                      );
+                    }}
+                  />
+                </div>
               </div>
               <div className={styles.emailInputFrame}>
                 <div className={styles.email}>
@@ -185,7 +207,7 @@ const ProfilePage = () => {
                             id={field.name}
                             name={field.name}
                             value={field.state.value}
-                            onBlur={field.handleBlur}
+                            onBlur={handleSubmit}
                             onChange={(e) => field.handleChange(e.target.value)}
                           />
                         );
@@ -215,7 +237,7 @@ const ProfilePage = () => {
                                 id={field.name}
                                 name={field.name}
                                 value={field.state.value}
-                                onBlur={field.handleBlur}
+                                onBlur={handleSubmit}
                                 onChange={(e) =>
                                   field.handleChange(e.target.value)
                                 }
