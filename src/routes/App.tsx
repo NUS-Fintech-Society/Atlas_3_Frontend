@@ -1,13 +1,7 @@
-import { useWindowSize } from "@uidotdev/usehooks";
-
-import MobileLoginContainer from "components/authentication/MobileLoginContainer.tsx";
-import WebLoginContainer from "components/authentication/WebLoginContainer.tsx";
-import { BREAKPOINTS } from "components/constants.tsx";
-
+import LoginContainer from "@/components/authentication/LoginContainer";
 
 const App = () => {
-    const size = useWindowSize();
-    return size.width && size.width <= BREAKPOINTS.MD ? <MobileLoginContainer/> : <WebLoginContainer/>;
+  return <LoginContainer />;
 };
 
-export default App
+export default App;
