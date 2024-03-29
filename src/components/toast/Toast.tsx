@@ -1,5 +1,5 @@
 // import React from "react";
-import styles from "./Toast.module.css";
+import styles from "css/toast/Toast.module.css";
 import {
   SuccessIcon,
   ErrorIcon,
