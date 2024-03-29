@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Toast, { ToastProps, ToastType } from "../../components/toast/Toast";
+import Toast, { ToastProps, ToastType } from "../../components/shared/Toast";
 
 function ToastDemoPage() {
   const [toasts, setToasts] = useState<ToastProps[]>([]);
