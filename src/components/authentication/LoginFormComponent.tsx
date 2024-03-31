@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import styles from "css/authentication/LoginFormComponent.module.css";
-import loginImage from "/login-image.png";
+import loginImage from "/login-image.svg";
 import { signIn } from "@/api/authentication.ts";
 
 const LoginFormComponent = () => {
