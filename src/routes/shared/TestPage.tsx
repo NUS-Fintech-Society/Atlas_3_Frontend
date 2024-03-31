@@ -5,7 +5,6 @@ import viteLogo from "/vite.svg";
 import reactLogo from "/react.svg";
 import resolveURL from "@/api/fetch.ts";
 
-
 const getResourceOptions = {
   queryKey: ['resourceData'],
   queryFn: () => fetch(resolveURL('/resource')).then((res) => res.json())
