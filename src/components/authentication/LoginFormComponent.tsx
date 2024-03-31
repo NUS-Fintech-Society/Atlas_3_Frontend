@@ -1,13 +1,23 @@
 import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 import styles from "css/authentication/LoginFormComponent.module.css";
 import loginImage from "/login-image.svg";
 import { signIn } from "@/api/authentication.ts";
 
+type Inputs = {
+  email: string,
+  password: string
+}
+
 const LoginFormComponent = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
+
+  const {
+    register,
+    handleSubmit,
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => signIn(data.email, data.password);
 
   const changePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -16,14 +26,13 @@ const LoginFormComponent = () => {
   return (
     <div className={styles.login}>
       <img src={loginImage} alt="login-image" className={styles["login-image"]} />
-      <div className={styles["login-form"]}>
+      <form className={styles["login-form"]} onSubmit={handleSubmit(onSubmit)}>
         <p>Login</p>
-        <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input type="text" placeholder="Email" {...register("email", {required: true })} />
         <input
           type={showPassword ? "text" : "password"}
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          {...register("password", {required: true })}
         />
         <button className={styles["password-visibility-button"]} onClick={changePasswordVisibility}>
           {showPassword ? "unshow" : "show"}
@@ -32,10 +41,8 @@ const LoginFormComponent = () => {
           Forgot your password?
         </a>
 
-        <button className={styles["sign-in-button"]} onClick={() => signIn(email, password)}>
-          Sign In
-        </button>
-      </div>
+        <input type="submit" className={styles["sign-in-button"]} value="Sign In" />
+      </form>
     </div>
   );
 };

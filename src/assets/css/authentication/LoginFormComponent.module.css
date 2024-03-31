@@ -82,7 +82,7 @@
   border-radius: 7px;
 
   color: #fff;
-  background-color: #0c1747;
+  background-color: #0c1747 !important;
   font-family: "DM Sans";
   font-size: 20px;
   text-align: center;
@@ -90,10 +90,9 @@
 }
 
 /* For desktops */
-@media (min-width: 1025px) {
+@media (min-width: 992px) {
   .login {
-    width: 60%;
-    height: 60%;
+    max-width: 1037px;
     background-color: white;
     border-radius: 4px;
     display: flex;
