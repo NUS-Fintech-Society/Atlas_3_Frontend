@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Icon } from "@iconify/react";
 
 import styles from "css/authentication/LoginFormComponent.module.css";
 import loginImage from "/login-image.svg";
@@ -35,7 +36,7 @@ const LoginFormComponent = () => {
           {...register("password", {required: true })}
         />
         <button className={styles["password-visibility-button"]} onClick={changePasswordVisibility}>
-          {showPassword ? "unshow" : "show"}
+          {showPassword ? <Icon icon="mdi:eye" style={{color: "white" }} /> : <Icon icon="mdi:eye-off" style={{color: "white" }} />}
         </button>
         <a href="" className={styles["forgot-password"]}>
           Forgot your password?
