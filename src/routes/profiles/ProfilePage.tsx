@@ -5,6 +5,7 @@ import { z } from "zod";
 import resolveURL from "../../api/fetch";
 import styles from "css/ProfilePage.module.css";
 import { useParams } from "react-router-dom";
+import { FocusEventHandler } from "react";
 
 // TODO: Integrate with React Router
 const ProfilePage = () => {
@@ -41,7 +42,7 @@ const ProfilePage = () => {
     },
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit: FocusEventHandler<HTMLInputElement> = (e) => {
     e.preventDefault();
     e.stopPropagation();
     void form.handleSubmit();
@@ -76,7 +77,7 @@ const ProfilePage = () => {
         <div className={styles.profileDetailsFrame}>
           <div className={styles.adminText}>
             <div className={styles.profileName}>
-              <h1 className={styles.profile}>{`Profile `}</h1>
+              <h1 className={styles.profile}>{`Profile`}</h1>
             </div>
             <div className={styles.homeIconFrame}>
               <div className={styles.departmentText}>
@@ -100,7 +101,6 @@ const ProfilePage = () => {
                 alt=""
                 src="/edit-profile-pic.svg"
               />
-
               <h1 className={styles.name}>{data.name}</h1>
             </div>
             <form
@@ -127,20 +127,19 @@ const ProfilePage = () => {
                         validators={{
                           onChange: z.string(),
                         }}
-                        children={(field) => {
-                          return (
-                            <input
-                              id={field.name}
-                              name={field.name}
-                              value={field.state.value}
-                              onBlur={handleSubmit}
-                              onChange={(e) =>
-                                field.handleChange(e.target.value)
-                              }
-                            />
-                          );
-                        }}
-                      />
+                      >
+                        {(field) =>
+                          <input
+                            id={field.name}
+                            name={field.name}
+                            value={field.state.value}
+                            onBlur={handleSubmit}
+                            onChange={(e) =>
+                              field.handleChange(e.target.value)
+                            }
+                          />
+                        }
+                      </form.Field>
                     </div>
                   </div>
                   <div className={styles.recruitmentFrame}>
@@ -169,24 +168,22 @@ const ProfilePage = () => {
                     validators={{
                       onChange: z.string(),
                     }}
-                    children={(field) => {
-                      return (
-                        <input
-                          id={field.name}
-                          name={field.name}
-                          value={field.state.value}
-                          onBlur={handleSubmit}
-                          onChange={(e) => field.handleChange(e.target.value)}
-                        />
-                      );
-                    }}
-                  />
-                </div>
+                  >
+                    {(field) =>
+                      <input
+                        id={field.name}
+                        name={field.name}
+                        value={field.state.value}
+                        onBlur={handleSubmit}
+                        onChange={(e) => field.handleChange(e.target.value)}
+                      />}
+                  </form.Field>
               </div>
-              <div className={styles.emailInputFrame}>
-                <div className={styles.email}>
-                  <div className={styles.backButtonFrame} />
-                  <div className={styles.iconMailWrapper}>
+          </div>
+          <div className={styles.emailInputFrame}>
+            <div className={styles.email}>
+              <div className={styles.backButtonFrame}/>
+              <div className={styles.iconMailWrapper}>
                     <img
                       className={styles.iconMail}
                       loading="lazy"
@@ -201,23 +198,22 @@ const ProfilePage = () => {
                       validators={{
                         onChange: z.string(),
                       }}
-                      children={(field) => {
-                        return (
-                          <input
-                            id={field.name}
-                            name={field.name}
-                            value={field.state.value}
-                            onBlur={handleSubmit}
-                            onChange={(e) => field.handleChange(e.target.value)}
-                          />
-                        );
-                      }}
-                    />
+                    >
+                      {(field) =>
+                        <input
+                          id={field.name}
+                          name={field.name}
+                          value={field.state.value}
+                          onBlur={handleSubmit}
+                          onChange={(e) => field.handleChange(e.target.value)}
+                        />
+                      }
+                    </form.Field>
                   </div>
                 </div>
                 <div className={styles.contactFrameContent}>
                   <div className={styles.telegramIconFrame}>
-                    <button className={styles.contact}>
+                    <div className={styles.contact}>
                       <div className={styles.componentInstance} />
                       <img
                         className={styles.iconPhone}
@@ -231,22 +227,21 @@ const ProfilePage = () => {
                           validators={{
                             onChange: z.string(),
                           }}
-                          children={(field) => {
-                            return (
-                              <input
-                                id={field.name}
-                                name={field.name}
-                                value={field.state.value}
-                                onBlur={handleSubmit}
-                                onChange={(e) =>
-                                  field.handleChange(e.target.value)
-                                }
-                              />
-                            );
-                          }}
-                        />
+                        >
+                          {(field) =>
+                            <input
+                            id={field.name}
+                            name={field.name}
+                            value={field.state.value}
+                            onBlur={handleSubmit}
+                            onChange={(e) =>
+                              field.handleChange(e.target.value)
+                              }
+                            />
+                          }
+                        </form.Field>
                       </div>
-                    </button>
+                    </div>
                     <div className={styles.backButtonWrapper}>
                       <div
                         className={styles.backButton}
