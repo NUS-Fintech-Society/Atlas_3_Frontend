@@ -2,6 +2,7 @@
 
 import { HttpResponseResolver, delay, http, HttpResponse } from "msw";
 import resolveURL from "../api/fetch.ts";
+import {auth_handlers} from "@/mocks/authentication/auth_handlers.ts";
 
 const API_CALL_DELAY = 0;
 
@@ -55,4 +56,6 @@ export const handlers = [
       });
     })
   ),
+
+  ...auth_handlers
 ];
