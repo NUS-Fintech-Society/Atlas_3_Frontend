@@ -1,5 +1,5 @@
 /* background-color: rgba(202, 202, 202, 0.2); */
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "css/shared/NavBar.module.css"; // Assuming you have CSS modules set up
 import personLogo from "/person_logo.png";
