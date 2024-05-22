@@ -1,8 +1,9 @@
+// Breakpoints based on Bootstrap 5
 export const BREAKPOINTS = {
   XS: 0,
   SM: 576,
   MD: 768,
   LG: 992,
   XL: 1200,
-  XXL: 1400
-}
+  XXL: 1400,
+};
