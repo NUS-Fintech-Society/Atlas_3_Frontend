@@ -5,10 +5,11 @@ This template provides a minimal setup to get React working in Vite with HMR and
 ## Setup Guide
 
 This project was set up with NodeJS v20.11.0 LTS with yarn.
+
 1. Install packages
-    ```shell
-    yarn
-    ```
+   ```shell
+   yarn
+   ```
 2. Create a file `.env.development.local` in root folder with the following information
    ```text
    VITE_IGNORE_MSW=false
@@ -16,9 +17,9 @@ This project was set up with NodeJS v20.11.0 LTS with yarn.
    If you would like to ignore mock service worker, set it to `true`.
 3. Create another file `.env.test.local` in root folder with same content as above
 4. Run the development server
-    ```shell
-    yarn dev
-    ```
+   ```shell
+   yarn dev
+   ```
 
 ## Dependencies
 
@@ -26,7 +27,9 @@ We shall be using these packages
 
 1. [React Query](https://query.gg/?s=tanstack) for data fetching.
 2. [Mock Service Worker](https://mswjs.io/) to isolate develop on the frontend. You don't have to worry about backend code.
-3. [date-fns](https://date-fns.org/) for any date related data processing.
+3. [React Router](https://reactrouter.com/en/main) for routing.
+4. [date-fns](https://date-fns.org/) for any date related data processing.
+5. [useHooks](https://usehooks.com/) for useful hooks so you never have to write custom hooks.
 
 Please look up the documentation on their websites for intended uses and best practices.
 
@@ -47,12 +50,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`

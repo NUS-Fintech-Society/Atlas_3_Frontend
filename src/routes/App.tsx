@@ -1,7 +1,10 @@
-import LoginContainer from "@/components/authentication/LoginContainer";
+import DefaultLayout from "components/layout.tsx";
+
 
 const App = () => {
-  return <LoginContainer />;
+    return (
+      <DefaultLayout/>
+    );
 };
 
 export default App;
