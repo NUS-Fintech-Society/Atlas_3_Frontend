@@ -1,20 +1,12 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "css/shared/NavBarMobile.module.css"; // Import CSS module
+import styles from "css/shared/NavBarMobile.module.css";
+import { useToggle } from "@uidotdev/usehooks";
 import personLogo from "/person_logo.png";
 import fintechLogo from "/fintech_logo.png";
 import closeSymbol from "/material-symbols_close.png";
 
 function NavBarMobile() {
-  const [showSideBar, setShowSideBar] = useState(false);
-
-  const toggleSideBar = () => {
-    setShowSideBar(true);
-  };
-
-  const closeSideBar = () => {
-    setShowSideBar(false);
-  };
+  const [showSideBar, toggleSideBar] = useToggle(false);
 
   return (
     <header>
@@ -23,8 +15,7 @@ function NavBarMobile() {
           <img
             src={fintechLogo}
             alt="fintech Logo"
-            className={styles.fintechLogo} // Use curly braces to evaluate the variable
-            onClick={toggleSideBar}
+            className={styles.fintechLogo}
           />
         </div>
         <div>
@@ -32,22 +23,21 @@ function NavBarMobile() {
             <img
               src={closeSymbol}
               alt="Close Logo"
-              className={styles.closeLogo} // Use curly braces to evaluate the variable
-              onClick={closeSideBar}
+              className={styles.closeLogo}
+              onClick={() => toggleSideBar(false)}
             />
           ) : (
             <img
               src={personLogo}
               alt="Person Logo"
-              className={styles.personLogo} // Use curly braces to evaluate the variable
+              className={styles.personLogo}
+              onClick={() => toggleSideBar(true)}
             />
           )}
         </div>
       </div>
       {showSideBar && (
         <div className={styles.sidebar}>
-          {" "}
-          {/* Use curly braces to evaluate the variable */}
           <div>
             <Link to="/" className={styles.Link}>
               Home
