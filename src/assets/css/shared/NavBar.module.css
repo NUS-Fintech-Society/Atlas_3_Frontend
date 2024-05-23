@@ -1,15 +1,13 @@
 .overallHeader {
-    display: flex;
+    display: none;
     justify-content: space-between; 
     background-color: #0C1747; 
     align-items: center;
     overflow: hidden; 
     width: 100%;
     position: fixed; 
-    top: 0; 
-    font-family: 'DM Sans', sans-serif;
+    top: 0;
     height: 98px;
-    
 }
 
 .overallHeader div a {
@@ -23,7 +21,7 @@
 }
 
 .overallHeader div a:hover {
-    color:#F9A72B;
+    color: #F9A72B;
 }
 
 .personLogo {
@@ -32,7 +30,7 @@
     padding-right: 44px;
 }
 
-.fintechLogo{
+.fintechLogo {
     max-width: 146px;
     height: auto;
 }
@@ -41,28 +39,25 @@
     position: fixed; 
     top: 100px; 
     right: 12px; 
-    font-size: px;
+    font-size: 16px;
     background-color: rgb(255, 255, 255);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
     z-index: 1001; 
     width: 158px;
-    height: 116;
     align-items: center; 
     justify-content: center; 
     display: flex;
     text-align: center;
     flex-direction: column;
-    font-family: 'DM Sans', sans-serif;
     font-weight: 400;
 }
 
 .profileOption,
 .signOutOption {
-    padding: 0px;
+    padding: 0;
     width: 100%;
     text-decoration: none; 
     color: black !important;
-    font-family: 'DM Sans', sans-serif;
     font-weight: 400;
 }
 
@@ -73,4 +68,10 @@
 
 .personIconContainer {
     height: 100px;
+}
+
+@media screen and (min-width: 992px) {
+    .overallHeader {
+        display: flex;
+    }
 }

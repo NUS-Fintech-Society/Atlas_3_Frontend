@@ -1,6 +1,6 @@
 import React from "react";
 
-const Recriutment: React.FC = () => {
+const Recruitment: React.FC = () => {
   return (
     <div>
       <h1>Recruitment</h1>
@@ -8,4 +8,4 @@ const Recriutment: React.FC = () => {
   );
 };
 
-export default Recriutment;
+export default Recruitment;
