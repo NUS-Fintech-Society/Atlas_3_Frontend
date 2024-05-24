@@ -3,6 +3,9 @@
     GitHub page: https://github.com/elad2412/the-new-css-reset
 ***/
 
+@import url("https://fonts.cdnfonts.com/css/dm-sans");
+
+
 /*
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
