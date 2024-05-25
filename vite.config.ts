@@ -14,6 +14,7 @@ export default defineConfig({
     browser: {
       enabled: true,
       name: "chrome",
+      headless: true,
     }
   },
   resolve: {
