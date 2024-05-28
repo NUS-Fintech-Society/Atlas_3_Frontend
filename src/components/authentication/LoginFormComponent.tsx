@@ -24,9 +24,7 @@ const LoginFormComponent = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     // signIn(data.email, data.password);
     signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
+      .then(() => {
         navigate("/");
       })
       .catch((error) => {
