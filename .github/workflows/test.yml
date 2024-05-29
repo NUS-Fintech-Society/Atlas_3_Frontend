@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
 
+    env:
+      VITE_FIREBASE_KEY: {{ secrets.VITE_FIREBASE_KEY }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
