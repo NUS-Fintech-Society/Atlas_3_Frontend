@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 import styles from "css/authentication/LoginFormComponent.module.css";
 import loginImage from "/login-image.svg";
-import { signIn } from "@/api/authentication.ts";
+import { auth } from "@/firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 type Inputs = {
   email: string,
@@ -13,12 +15,24 @@ type Inputs = {
 
 const LoginFormComponent = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
   } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => signIn(data.email, data.password);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    // signIn(data.email, data.password);
+    signInWithEmailAndPassword(auth, data.email, data.password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
+  }
 
   const changePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
