@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAqZ7qA8zsHThKvXRX5-4XFs8sYkMItRRg",
+  apiKey: import.meta.env.VITE_FIREBASE_KEY,
   authDomain: "nfs-atlas-3.firebaseapp.com",
   projectId: "nfs-atlas-3",
   storageBucket: "nfs-atlas-3.appspot.com",
