@@ -3,30 +3,34 @@ import TestPage from "routes/shared/TestPage.tsx";
 import LoginPage from "routes/shared/LoginPage.tsx";
 import { auth } from "@/firebase";
 import { redirect } from "react-router-dom";
-import { signOut } from "firebase/auth";
+import { signOut, onAuthStateChanged } from "firebase/auth";
 
-const ensureLoggedIn = () => {
-  const user = auth.currentUser;
-  if (!user) {
-    return redirect("/login");
-  }
-  return {};
-}
+const ensureLoggedIn = async () => {
+  return new Promise((resolve, reject) => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        resolve({ user });
+      } else {
+        reject(redirect("/login"));
+      }
+    });
+  });
+};
 
 const logOut = async () => {
   return await signOut(auth).then(() => redirect("/login"));
-}
+};
 
 const routesConfig = [
   {
     path: "/",
     Component: App,
-    loader: async () => ensureLoggedIn(),
+    loader: ensureLoggedIn,
   },
   {
     path: "/test",
     Component: TestPage,
-    loader: async () => ensureLoggedIn(),
+    loader: ensureLoggedIn,
   },
   {
     path: "/login",
@@ -34,8 +38,8 @@ const routesConfig = [
   },
   {
     path: "/logout",
-    loader: async () => logOut(),
+    loader: logOut,
   }
-]
+];
 
 export default routesConfig;
