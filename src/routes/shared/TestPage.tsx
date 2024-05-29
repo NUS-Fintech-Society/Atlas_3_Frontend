@@ -1,19 +1,10 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 
 import viteLogo from "/vite.svg";
 import reactLogo from "/react.svg";
-import resolveURL from "@/api/fetch.ts";
-
-const getResourceOptions = {
-  queryKey: ["resourceData"],
-  queryFn: () => fetch(resolveURL("/resource")).then((res) => res.json()),
-};
 
 function TestPage() {
   const [count, setCount] = useState(0);
-
-  const { isPending, data } = useQuery(getResourceOptions);
 
   return (
     <>
@@ -25,7 +16,7 @@ function TestPage() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>{isPending ? "Loading..." : data.result}</h1>
+      <h1>Hello World!</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
