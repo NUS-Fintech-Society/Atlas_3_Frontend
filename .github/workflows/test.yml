@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
 
+    environment: test
+
     env:
       VITE_FIREBASE_KEY: ${{ secrets.VITE_FIREBASE_KEY }}
 
