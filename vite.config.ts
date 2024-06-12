@@ -11,6 +11,11 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: ["./vitest.setup.ts"],
+    browser: {
+      enabled: true,
+      name: "chrome",
+      headless: true,
+    }
   },
   resolve: {
     alias: [
@@ -20,6 +25,7 @@ export default defineConfig({
       { find: "css", replacement: "/src/assets/css" },
       { find: "components", replacement: "/src/components" },
       { find: "routes", replacement: "/src/routes" },
+      { find: "tests", replacement: "/tests" },
     ],
   },
 });
