@@ -1,9 +1,10 @@
 import DefaultLayout from "components/layout.tsx";
+import { Outlet } from "react-router-dom";
 
 
 const App = () => {
     return (
-      <DefaultLayout/>
+      <DefaultLayout children={<Outlet />}/>
     );
 };
 

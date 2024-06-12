@@ -12,11 +12,13 @@ function NavBarMobile() {
     <header>
       <div className={styles.overallHeader}>
         <div>
+          <Link to="/">
           <img
             src={fintechLogo}
             alt="fintech Logo"
             className={styles.fintechLogo}
           />
+          </Link>
         </div>
         <div>
           {showSideBar ? (

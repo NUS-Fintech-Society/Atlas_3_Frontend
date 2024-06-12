@@ -1,6 +1,7 @@
 import React from "react";
 
 const Announcements: React.FC = () => {
+  console.log("i am here ")
   return (
     <div>
       <h1>Announcements</h1>

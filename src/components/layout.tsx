@@ -17,7 +17,9 @@ const DefaultLayout: React.FC<LayoutProps> = ({ children=null }) => {
       ) : (
         <Navbar />
       )}
-      {children}
+      <div style={{marginTop: "105px"}}>
+        {children}
+      </div>
     </>
   );
 };
