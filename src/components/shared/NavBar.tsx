@@ -20,13 +20,13 @@ function Navbar() {
     <div>
       <div className={styles.overallHeader}>
         <div>
-          <a href="/public">
+          <Link to="/">
             <img
               src={fintechLogo}
               alt="fintech Logo"
               className={styles.fintechLogo}
             />
-          </a>
+          </Link>
         </div>
         <div>
           <Link to="/announcements" className={styles.Link}>
